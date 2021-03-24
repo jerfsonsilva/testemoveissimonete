@@ -11,6 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+         factory(App\Models\Artigos::class, 10)->create();//Gerar 10 registros
     }
 }
