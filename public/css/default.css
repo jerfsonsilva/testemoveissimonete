@@ -1,0 +1,15 @@
+.card-post{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.card-post .link{
+	bottom: 0px;right: 8px;
+}
+.card-post .col-4{
+	margin-top: -21px;margin-bottom: -21px;margin-left: -21px;
+}
+
+body{
+	background: rgb(195,130,9);
+background: linear-gradient(90deg, rgba(195,130,9,1) 0%, rgba(62,42,4,1) 68%);
+}
