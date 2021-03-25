@@ -1,61 +1,313 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Bem vindo(a) ao meu mundo
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Aplicação feita utilizando o framework Laravel
 
-## About Laravel
+### para executar basta rodar os seguintes comandos no terminal na pasta do projeto:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+##### Ele vai instalar todos os pacotes php necessários
+```
+composer install
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+##### Esse vai gerar uma chave para sua aplicação
+```
+php artisan key:generate
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+##### Depois precisa renomear o arquivo .ENV.EXAMPLE para .ENV e configurar os dados do seu banco
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD=
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+##### Agora basta rodar o comando:
+```
+Php artisan migrate
+```
+##### Para criar o banco de dados e 
+```
+php artisan db:seed
+```
+##### Para gerar Artigos automaticos
 
-## Laravel Sponsors
+## Pronto, espero que gostem ;)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Bibliotecas de terceiros utilizadas
+##### Framework backend php  Laravel - facilidade de uso, segurança e utilização do Symfony
+##### Framework fontend Vue js, vue-js-modal, v-mask, necessario para poder criar um frontend baseado em componentes
+##### Boostrap biblioteca CSS para estilizar a pagina de forma pratica e responssiva 
+##### Jquery uma dependencia do Boostrap
 
-### Premium Partners
+# API de Posts
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+Esta API é destinada para a manipulação de posts e cadastro de contatos
 
-## Contributing
+## Endpoints
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### GET /artigos
+Esse Enpoint é responsavel por retornar todos os artigos do banco de dados
 
-## Code of Conduct
+#### Parametros 
+Nenhum
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### Respostas
 
-## Security Vulnerabilities
+##### OK! 200
+Caso sua solitação ocorra tudo bem
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Exemplo de resposta:
 
-## License
+```
+{
+    "itens": [
+        {
+            "id": 1,
+            "foto": "https://via.placeholder.com/500x500.png/00eeee?text=86+labore",
+            "titulo": "aveum",
+            "autor": "Dr. Enoch Rohan V",
+            "conteudo": "Et qui quidem fugit eaque officiis reprehenderit maxime. Dolores iure ab provident eos quasi aliquam soluta. Dicta qui consequatur voluptatem consequuntur nobis ipsam sapiente ipsa.",
+            "created_at": "2021-03-24T23:38:18.000000Z",
+            "updated_at": "2021-03-24T23:38:18.000000Z"
+        },
+        {
+            "id": 2,
+            "foto": "https://via.placeholder.com/500x500.png/0066ee?text=86+sint",
+            "titulo": "korey80",
+            "autor": "Virgie Beier DDS",
+            "conteudo": "Eos voluptas placeat id libero eligendi. Repellendus sed dolor voluptatibus blanditiis magni. Aut aut enim sunt sunt fuga cum ipsa.",
+            "created_at": "2021-03-24T23:38:18.000000Z",
+            "updated_at": "2021-03-24T23:38:18.000000Z"
+        }
+    ],
+      "_links": [
+        {
+            "href": "http://127.0.0.1:8000/artigo/0",
+            "method": "get",
+            "rel": "visualizar_artigo"
+        },
+        {
+            "href": "http://127.0.0.1:8000/artigos",
+            "method": "get",
+            "rel": "listar_artigo"
+        }
+    ]
+}
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+### GET /artigo/ID
+Esse Enpoint é responsavel por exibir um artigo especifico 
+
+#### Parametros 
+id: ID artigo cadastrado no sistema.
+
+
+#### Respostas
+
+##### Objeto não encontrado! 404
+Caso o artigo não exista no banco de dados
+Motivos: ID invalido
+
+Exemplo de resposta:
+
+```
+{
+    "err": "Objeto não encontrado",
+    "_links": [
+        {
+            "href": "http://127.0.0.1:8000/artigo/0",
+            "method": "get",
+            "rel": "visualizar_artigo"
+        },
+        {
+            "href": "http://127.0.0.1:8000/artigos",
+            "method": "get",
+            "rel": "listar_artigo"
+        }
+    ]
+}
+```
+
+##### OK! 200
+Caso sua solitação ocorra tudo bem
+
+Exemplo de resposta:
+
+```
+
+{
+    "item": {
+        "id": 1,
+        "foto": "https://via.placeholder.com/500x500.png/00eeee?text=86+labore",
+        "titulo": "aveum",
+        "autor": "Dr. Enoch Rohan V",
+        "conteudo": "Et qui quidem fugit eaque officiis reprehenderit maxime. Dolores iure ab provident eos quasi aliquam soluta. Dicta qui consequatur voluptatem consequuntur nobis ipsam sapiente ipsa.",
+        "created_at": "2021-03-24T23:38:18.000000Z",
+        "updated_at": "2021-03-24T23:38:18.000000Z"
+    },
+    "_links": [
+        {
+            "href": "http://127.0.0.1:8000/artigo/1",
+            "method": "get",
+            "rel": "visualizar_artigo"
+        },
+        {
+            "href": "http://127.0.0.1:8000/artigos",
+            "method": "get",
+            "rel": "listar_artigo"
+        }
+    ]
+}
+```
+
+
+### GET /contatos
+Esse Enpoint é responsavel por exibir uma lista de contatos cadastrado no sistema
+
+#### Parametros 
+Nenhum
+
+#### Respostas
+
+
+##### OK! 200
+Caso sua solitação ocorra tudo bem
+
+Exemplo de resposta:
+
+```
+{
+    "itens": [
+        {
+            "id": 1,
+            "nome": "jerfson silva",
+            "email": "jerfsonlink@gmail.com",
+            "telefone": "73 982394564",
+            "conteudo": "teste teste",
+            "created_at": "2021-03-25T00:39:33.000000Z",
+            "updated_at": "2021-03-25T00:39:33.000000Z"
+        },
+        {
+            "id": 2,
+            "nome": "jerfson silva",
+            "email": "jerfsonlink@gmail.com",
+            "telefone": "73 982394564",
+            "conteudo": "teste teste",
+            "created_at": "2021-03-25T00:40:02.000000Z",
+            "updated_at": "2021-03-25T00:40:02.000000Z"
+        }
+    ],
+    "_links": [
+        {
+            "href": "http://127.0.0.1:8000/contatos",
+            "method": "get",
+            "rel": "listar_contatos"
+        },
+        {
+            "href": "http://127.0.0.1:8000/contatos/add",
+            "method": "POST",
+            "rel": "criar_contato"
+        }
+    ]
+}
+```
+
+
+### POST /contatos/add
+Esse Enpoint é responsavel por cadastrar um novo contato no sistema
+
+#### Parametros 
+nome: Nome do usuario.
+telefone: Telefone do usuario.
+conteudo: Conteudo do usuario.
+email: E-mail do usuario.
+
+Exemplo de parametro:
+
+```
+{
+    "email": "jerfsonlink@gmail.com",
+    "nome": "jerfson silva",
+    "telefone": "73 982394564",
+    "conteudo" : "teste teste"
+}
+```
+
+#### Respostas
+
+
+##### Pre-condição falhou 412
+
+Caso os parametros obrigatorio não sejam passados
+
+Exemplo de resposta:
+```
+{
+    "err": "O campo nome é obrigatório., O campo telefone é obrigatório., O campo conteudo é obrigatório.",
+    "_links": [
+        {
+            "href": "http://127.0.0.1:8000/contatos",
+            "method": "get",
+            "rel": "listar_contatos"
+        },
+        {
+            "href": "http://127.0.0.1:8000/contatos/add",
+            "method": "POST",
+            "rel": "criar_contato"
+        }
+    ]
+}
+```
+
+##### Erro interno 500
+
+Caso o banco de dados não aceite os dados
+
+Exemplo de resposta:
+```
+{
+    "err": "Erro ao salvar conteudo",
+    "_links": [
+        {
+            "href": "http://127.0.0.1:8000/contatos",
+            "method": "get",
+            "rel": "listar_contatos"
+        },
+        {
+            "href": "http://127.0.0.1:8000/contatos/add",
+            "method": "POST",
+            "rel": "criar_contato"
+        }
+    ]
+}
+```
+
+##### OK! 200
+Caso sua solitação ocorra tudo bem
+
+Exemplo de resposta:
+
+```
+{
+    "resultado": true,
+    "_links": [
+        {
+            "href": "http://127.0.0.1:8000/contatos",
+            "method": "get",
+            "rel": "listar_contatos"
+        },
+        {
+            "href": "http://127.0.0.1:8000/contatos/add",
+            "method": "POST",
+            "rel": "criar_contato"
+        }
+    ]
+}
+```
+
