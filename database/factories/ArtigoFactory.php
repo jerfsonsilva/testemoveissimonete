@@ -22,6 +22,6 @@ $factory->define(Artigos::class, function (Faker $faker) {
 		'foto' => $faker->imageUrl(500,500, false),
 		'titulo' => $faker->userName,
 		'autor' => $faker->name,
-		'conteudo' => $faker->text
+		'conteudo' => $faker->text(9000)
 	];
 });

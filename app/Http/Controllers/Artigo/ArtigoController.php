@@ -46,9 +46,15 @@ class ArtigoController extends Controller
 		$objeto = \App\Models\Artigos::find($id); //Procurar objeto no banco pelo ID
 
 		if($objeto == null ) return response()->json(['err'=>'Objeto não encontrado','_links'=>$links], 404);
-
+		$objeto->data = $objeto->created_at->format('M d, Y');
 		return response()->json(['item'=> $objeto,'_links'=>$links], 200);
 
+	}
+
+	public function artigoView($id, Request $request)
+	{
+		$item =  \App\Models\Artigos::find($id); 
+		return view('post',compact('id','item'));
 	}
 
 }

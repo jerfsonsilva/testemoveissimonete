@@ -9,7 +9,27 @@
 	margin-top: -21px;margin-bottom: -21px;margin-left: -21px;
 }
 
+.card-post-pag{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.card-post-pag .col-4{
+	margin-top: -21px;margin-left: -21px;
+}
+.card-post-pag .conteudo{
+	margin-top: 6%;margin-left: 14%;
+	font-size: 22px;
+}
+.card-post-pag  .titulo{
+	color: #f1a10a;
+	font-size: 46px;
+}
+.card-post-pag  .cabecalho{
+	margin-top: 15%;
+	margin-left: 10%;
+}
 body{
 	background: rgb(195,130,9);
-background: linear-gradient(90deg, rgba(195,130,9,1) 0%, rgba(62,42,4,1) 68%);
+	background: linear-gradient(90deg, rgba(195,130,9,1) 0%, rgba(62,42,4,1) 68%);
 }

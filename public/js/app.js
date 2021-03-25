@@ -31758,6 +31758,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component("lista-posts", function () {
   return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./components/post/Lista */ "./resources/js/components/post/Lista.vue"));
 });
+Vue.component("post", function () {
+  return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./components/post/Post */ "./resources/js/components/post/Post.vue"));
+});
 var app = new Vue({
   el: '#areaVue'
 });
