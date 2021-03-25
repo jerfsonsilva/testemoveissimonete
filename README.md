@@ -3,14 +3,17 @@
 ## Aplicação feita utilizando o framework Laravel
 
 ### para executar basta rodar os seguintes comandos no terminal na pasta do projeto:
+
+##### Ele vai instalar todos os pacotes php necessários
 ```
 composer install
 ```
-##### Ele vai instalar todos os pacotes php necessários
+
+##### Esse vai gerar uma chave para sua aplicação
 ```
 php artisan key:generate
 ```
-##### Esse vai gerar uma chave para sua aplicação
+
 
 ##### Depois precisa renomear o arquivo .ENV.EXAMPLE para .ENV e configurar os dados do seu banco
 
