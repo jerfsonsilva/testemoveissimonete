@@ -38,7 +38,8 @@
 						<a class="nav-link" href="/">Posts</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Contato</a>
+						<btn-contato :btntexto="'Contato'" :class="'nav-link'"></btn-contato>
+						
 					</li>
 				</ul>
 			</div>
