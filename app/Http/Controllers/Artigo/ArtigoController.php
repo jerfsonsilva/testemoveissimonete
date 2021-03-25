@@ -53,8 +53,8 @@ class ArtigoController extends Controller
 
 	public function artigoView($id, Request $request)
 	{
-		$item =  \App\Models\Artigos::find($id); 
-		return view('post',compact('id','item'));
+		
+		return view('post',compact('id'));
 	}
 
 }
