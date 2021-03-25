@@ -14,5 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
+
+#API
+
+Route::prefix('artigos')->group(function () {
+	Route::get('/','Artigo\ArtigoController@index');
+});
+
+Route::get('artigo/{id}','Artigo\ArtigoController@artigo');
+
+
+
