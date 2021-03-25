@@ -26,4 +26,12 @@ Route::prefix('artigos')->group(function () {
 Route::get('artigo/{id}','Artigo\ArtigoController@artigo');
 
 
+Route::prefix('contatos')->group(function () {
+	Route::get('/','Contato\ContatoController@index');
+	Route::post('add/','Contato\ContatoController@add');
+});
+
+
+
+
 
